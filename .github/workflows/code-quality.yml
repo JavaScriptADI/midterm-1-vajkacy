@@ -1,0 +1,16 @@
+name: Code Quality
+
+on: [push]
+
+jobs:
+    linting:
+        name: Linting
+        runs-on: ubuntu-latest
+        
+        steps:
+            - uses: actions/checkout@v4
+
+            - name: Install dependencies
+              run: npm install
+            - name: Code Linting
+              run: npm run lint
